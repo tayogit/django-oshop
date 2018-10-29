@@ -1,0 +1,47 @@
+
+#header a{
+    font-size:24px;
+    text-decoration:none;
+    display:block;
+}
+
+
+
+#subheader{
+    height: 60px;
+    background-color:lightgrey;
+    color:black;
+    border-radius:6px;
+    display:block;
+ 
+}
+#subheader .cart{
+    float:right;
+    padding:20px;
+}
+
+.product-detail{
+    margin:20px;
+    height:60%;
+    width:340px;
+    float:left;
+    background-color:lightgrey;
+    padding:30px;
+    border-radius:6px;
+}
+
+.product-detail img{
+    width:100%;
+    height: 100%;
+}
+
+ a:hover {
+    text-decoration: none;
+}
+.details{
+    float:left;
+    width:450px;
+    padding:20px;
+
+}
+

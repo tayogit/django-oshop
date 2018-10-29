@@ -1,0 +1,26 @@
+{% extends "oshop/base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+<link href="{% static 'bs3/css/main.css' %}" rel="stylesheet">
+{% block title %}
+{{ product.name }}
+{% endblock %}
+{% block content %}
+<div class="product-detail">
+<img src="{% if product.image %}{{ product.image.url }}{% else %}
+{% static "img/no_image2.png" %}{% endif %}">
+</div>
+<div class="details">
+    <h1>{{ product.name }}</h1>
+    <h2><a href="{{ product.category.get_absolute_url }}">{{product.category }}</a></h2>
+    <h3 class="price"><b> ${{ product.price }} </b></h3><br>
+    <form action="{% url "cart:cart_add" product.id %}" method="post">
+            {{ cart_product_form }}
+            {% csrf_token %}
+            <input type="submit" value="Add to cart" class="btn btn-sm btn-primary">
+    </form>
+    {{ product.description|linebreaks }}
+</div>
+
+
+{% endblock %}
